@@ -1,0 +1,283 @@
+/* ==========================================================================
+   ACADEMY THEME - PREMIUM CUSTOM CSS SYSTEM
+   St. Jude's Academy / Educore MNC Standard Styling
+   ========================================================================== */
+
+/* Custom Selection */
+::selection {
+  background-color: #ffaa3b;
+  color: #07172b;
+}
+
+/* Custom Smooth Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07172b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ffaa3b 0%, #d97706 100%);
+  border-radius: 6px;
+  border: 2px solid #07172b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
+}
+
+/* ==========================================================================
+   KEYFRAME ANIMATIONS
+   ========================================================================== */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 170, 59, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 170, 59, 0.55);
+  }
+}
+
+@keyframes shimmerSlide {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* ==========================================================================
+   HERO FULLSCREEN VIDEO STYLES
+   ========================================================================== */
+.hero-video-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 30;
+  background-color: #000000;
+  animation: fadeInScale 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-video-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-video-topbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(180deg, rgba(7, 23, 43, 0.85) 0%, rgba(7, 23, 43, 0.4) 60%, transparent 100%);
+  z-index: 40;
+  pointer-events: auto;
+}
+
+.hero-video-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(7, 23, 43, 0.7);
+  border: 1px solid rgba(255, 170, 59, 0.4);
+  backdrop-filter: blur(12px);
+  padding: 8px 16px;
+  border-radius: 9999px;
+  color: #ffaa3b;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-exit-tour-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(16px);
+  color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.hero-exit-tour-btn:hover {
+  background: #ffaa3b;
+  color: #07172b;
+  border-color: #ffaa3b;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 170, 59, 0.45);
+}
+
+/* ==========================================================================
+   PREMIUM GLASSMORPHISM & CARD EFFECTS
+   ========================================================================== */
+.glass-pill {
+  background: rgba(255, 170, 59, 0.15);
+  border: 1px solid rgba(255, 170, 59, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffaa3b;
+  box-shadow: 0 2px 10px rgba(255, 170, 59, 0.12);
+}
+
+.glass-card-dark {
+  background: rgba(7, 23, 43, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(7, 23, 43, 0.05);
+}
+
+/* Academy Interactive Card - Permanent Bright Gold Accent & Deep Shadow */
+.academy-interactive-card {
+  position: relative;
+  border: 2px solid rgba(255, 170, 59, 0.85);
+  background-color: #ffffff;
+  box-shadow: 0 28px 56px -10px rgba(7, 23, 43, 0.26), 0 16px 32px -6px rgba(7, 23, 43, 0.16), 0 0 28px rgba(255, 170, 59, 0.22);
+}
+
+/* Button Shimmer Effect */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: shimmerSlide 3.5s infinite;
+}
+
+/* Section Heading Underline Glow (Hidden) */
+.heading-accent-bar {
+  display: none !important;
+}
+
+/* Stats Counter Pill */
+.stats-number-glow {
+  text-shadow: 0 2px 14px rgba(255, 170, 59, 0.35);
+}
+
+/* Facility and Pillar Hover Highlights */
+.academy-facility-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 28px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(7, 23, 43, 0.03);
+}
+
+.academy-facility-card:hover {
+  transform: translateY(-5px);
+  border-color: #ffaa3b;
+  box-shadow: 0 16px 36px -10px rgba(7, 23, 43, 0.1), 0 0 15px rgba(255, 170, 59, 0.15);
+}
+
+/* Timeline Accent Card */
+.academy-timeline-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #ffaa3b;
+  border-radius: 14px;
+  padding: 24px 28px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.academy-timeline-card:hover {
+  transform: translateX(6px);
+  box-shadow: 0 10px 25px rgba(7, 23, 43, 0.07);
+  border-left-color: #d97706;
+}
+
+/* Document Checklist Card */
+.academy-checklist-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 24px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.academy-checklist-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 12px 28px rgba(7, 23, 43, 0.06);
+  transform: translateY(-3px);
+}
+
+.academy-checklist-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ffaa3b, #d97706);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.academy-checklist-card:hover::before {
+  opacity: 1;
+}
+

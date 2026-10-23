@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./academy-theme.css";
+
+:root {
+  --navy-dark: #07172b;
+  --navy-stats: #112038;
+  --navy-footer: #07172b;
+  --accent-amber: #ffaa3b;
+  --accent-amber-hover: #f59e0b;
+  --text-heading: #0f172a;
+  --text-dark: #1e293b;
+  --text-muted: #64748b;
+  --text-light: #475569;
+  --bg-light: #f8fafc;
+  --border-light: #e2e8f0;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #ffffff;
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Container Utility matching 1240px exactly */
+.site-container {
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Testimonial Marquee Mask & Track */
+.marquee-container-mask {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  padding: 24px 0 48px 0;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: marqueeContinuous 35s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeContinuous {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 12px));
+  }
+}
